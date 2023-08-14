@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE validators PUBLIC "-//Apache Struts//XWork Validator 1.0.3//EN" "http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">
+<validators>
+	<field name="coursename">
+		<field-validator type="requiredstring">
+			<message>Please Enter CourseName</message>
+		</field-validator>
+		</field>
+		  <field name="duration">
+		<field-validator type="fieldexpression">
+		<param name="expression"><![CDATA[(duration>0)]]></param>
+			<message>Please Enter Duration</message>
+		</field-validator>
+		</field> 
+		<field name="fees">
+		<field-validator type="requiredstring">
+			<message>Please Enter Fees</message>
+		</field-validator> 
+		</field>
+			<field name="fees">
+		<field-validator type="regex">
+		<param name="regex">^([0-9]+$)</param>
+			<message>Please Enter Valid Fees</message>
+		</field-validator> 
+		</field>
+		</validators>
+		
+		

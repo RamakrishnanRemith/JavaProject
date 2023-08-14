@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE validators PUBLIC "-//Apache Struts//XWork Validator 1.0.3//EN" "http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">
+<validators>
+	
+		<field name="paidfees">
+		<field-validator type="requiredstring">
+			<message>Please Enter PayFees</message>
+		</field-validator> 
+		 </field>
+			<field name="payfees">
+		<field-validator type="regex">
+		<param name="regex">^([0-9]+$)</param>
+			<message>Please Enter Valid PayFees</message>
+		</field-validator>  
+		</field>
+		 <field name="paydate">
+		<field-validator type="requiredstring">
+			<message>Please Enter Paydate</message>
+		</field-validator>
+		</field>
+		</validators>
+		

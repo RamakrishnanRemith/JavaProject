@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE validators PUBLIC "-//Apache Struts//XWork Validator 1.0.3//EN" "http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">
+<validators>
+	<field name="teacherName">
+		<field-validator type="requiredstring">
+			<message>Please Enter TeacherName</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="minLength">5</param>
+			<param name="maxLength">35</param>
+			<param name="trim">true</param>
+			<message>Teacher Name must be between 5 to 35 characters</message>
+		</field-validator>
+	</field>
+	<field name ="mailId">
+		<field-validator type="requiredstring">
+			<message>Please Enter The Email</message>
+		</field-validator>
+	</field>
+	<field name="contactNo">
+		<field-validator type="requiredstring">
+			<message>Please Enter ContactNo</message>
+		</field-validator>
+		<field-validator type="regex">
+			 <param name="regex">^([0-9]{10}$)</param>
+			 <message>Conatact must be 10 numbers</message>
+		 </field-validator>
+	</field>
+	<field name ="dob">
+		<field-validator type="requiredstring">
+			<message>Please Select DOB</message>
+		</field-validator>
+	</field> 
+	 <field name ="gender">
+		<field-validator type="fieldexpression">
+			<param name="expression"><![CDATA[(gender>0)]]></param>
+			<message>Please Select Gender</message>
+		</field-validator>
+	</field>
+	<field name ="qualification">
+		<field-validator type="fieldexpression">
+			<param name="expression"><![CDATA[(qualification>1)]]></param>
+			<message>Please Select Qualification</message>
+		</field-validator>
+	</field>
+	<field name ="address">
+		<field-validator type="requiredstring">
+			<message>Please Enter Address</message>
+		</field-validator>
+	</field>
+	<field name ="pincode">
+		<field-validator type="requiredstring">
+			<message>Please Enter Pincode</message>
+		</field-validator>
+		<field-validator type="regex">
+			 <param name="regex">^([0-9]{6}$)</param>
+			 <message>Pincode must be 6 numbers</message>
+		 </field-validator>
+	</field> 
+</validators>

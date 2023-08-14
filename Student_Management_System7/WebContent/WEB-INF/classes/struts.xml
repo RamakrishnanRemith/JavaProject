@@ -1,0 +1,553 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.multipart.maxSize" value="1000000" />
+	<constant name="struts.multipart.saveDir" value="javax.servlet.context.tempdir" />
+
+	<package name="default" namespace="/"
+		extends="struts-default, json-default">
+		<action name="Admin">
+			<result name="success">admin/login.jsp</result>
+		</action>
+		<action name="AdminBack2">
+			<result name="success" type="redirect">ListRedirect</result>
+		</action>
+
+		<action name="AdminCancel">
+			<result name="success" type="redirect">ListRedirect</result>
+		</action>
+		<action name="loginForm" class="Admin.LoginAction" method="Login">
+			<result name="input">admin/login.jsp</result>
+			<result name="success" type="redirect">LoginRedirect</result>
+			<result name="error">admin/login.jsp</result>
+		</action>
+		<action name="LoginRedirect">
+			<result name="success" type="redirect">ListRedirect</result>
+		</action>
+		<action name="ListRedirect" class="common.FetchRecords" method="view">
+			<result name="loginRedirectSuccess">admin/adminList.jsp</result>
+		</action>
+
+		<action name="profileform" class="model.admin.FetchRecord"
+			method="profileView">
+			<result name="ProfileViewSuccess">admin/profile.jsp</result>
+		</action>
+
+		<action name="viewform" class="model.admin.FetchRecord" method="profileView">
+			<result name="ProfileViewSuccess">admin/profile.jsp</result>
+		</action>
+
+		<action name="NotUse" class="common.FetchRecords" method="listUse">
+			<result name="UseSuccess" type="redirect">ListRedirect</result>
+			<result name="UseFail" type="redirect">ListRedirect</result>
+		</action>
+		<action name="Use" class="common.FetchRecords" method="listNotUse">
+			<result name="NotUseSuccess" type="redirect">ListRedirect</result>
+			<result name="NotUseFail" type="redirect">ListRedirect</result>
+		</action>
+
+		<action name="registerbtn">
+			<result name="success">admin/register.jsp</result>
+		</action>
+		<action name="registerForm" class="Admin.AdminRegisterAction"
+			method="register">
+			<result name="input">admin/register.jsp</result>
+			<result name="success" type="redirect">registerRedirect</result>
+			<result name="fail">admin/register.jsp</result>
+		</action>
+		<action name="registerRedirect">
+			<result name="success" type="redirect">ListRedirect</result>
+		</action>
+		<action name="profileform" class="model.admin.FetchRecord"
+			method="profileView">
+			<result name="ProfileViewSuccess">admin/profile.jsp</result>
+		</action>
+		<action name="sieditForm" class="model.admin.FetchRecord"
+			method="getUpdateData">
+			<result name="success">admin/adminEdit.jsp</result>
+			<result name="fail">common/header.jsp</result>
+		</action>
+		<action name="editForm" class="Admin.AdminEdit" method="Update">
+			<result name="input">admin/adminEditcopy.jsp</result>
+			<result name="success" type="redirect">profileRedirect</result>
+			<result name="fail">admin/adminEditcopy.jsp</result>
+		</action>
+		<action name="AdminCancelForm" class="model.admin.FetchRecord"
+			method="profileView">
+			<result name="ProfileViewSuccess" type="redirect">profileRedirect</result>
+		</action>
+		<action name="profileRedirect" method="profileView" class="model.admin.FetchRecord">
+			<result name="ProfileViewSuccess">admin/profile.jsp</result>
+			<result name="ProfileViewFail">common/header.jsp</result>
+		</action>
+		<action name="ChangePassword">
+			<result name="success">common/changePassword.jsp</result>
+			<result name="error">common/header.jsp</result>
+		</action>
+		<action name="changePasswordForm" class="Admin.ChangePassword"
+			method="changePassword">
+			<result name="input">common/changePassword.jsp</result>
+			<result name="success" type="redirect">ChangePasswordRedirect</result>
+			<result name="error">common/changePassword.jsp</result>
+		</action>
+		<action name="ChangePasswordRedirect">
+			<result name="success">common/header.jsp</result>
+		</action>
+		<action name="Forgotyourpassword">
+			<result name="success">common/forgotPassword.jsp</result>
+		</action>
+		<action name="ForgotyourpasswordCancel">
+			<result name="success">admin/login.jsp</result>
+		</action>
+		<action name="forgotPasswordForm" class="common.ForgotPasswordAction"
+			method="forgotPassword">
+			<result name="input">common/forgotPassword.jsp</result>
+			<result name="success" type="redirect">ForgotPasswordRedirect</result>
+			<result name="error">common/forgotPassword.jsp</result>
+		</action>
+		<action name="ForgotPasswordRedirect">
+			<result name="success">admin/login.jsp</result>
+		</action>
+
+		<action name="Logout">
+			<result name="success">admin/login.jsp</result>
+		</action>
+		<action name="AdminBtn">
+			<result name="success" type="redirect">ListRedirect</result>
+		</action>
+
+
+		<action name="TeacherBtn">
+			<result name="success" type="redirect">TeacherListRedirect</result>
+		</action>
+		<action name="TeacherCancel">
+			<result name="success" type="redirect">TeacherListRedirect</result>
+		</action>
+		<action name="TeacherListRedirect" class="model.teacher.TeacherListAction"
+			method="view">
+			<result name="loginRedirectSuccess">teacher/TeacherList.jsp</result>
+		</action>
+		<action name="tviewform" class="model.teacher.TeacherSingleView"
+			method="ProfileView">
+			<result name="ProfileSuccess">teacher/TeacherSingleView.jsp</result>
+		</action>
+		<action name="TeacherCancelForm" class="model.teacher.TeacherSingleView"
+			method="ProfileView">
+			<result name="ProfileSuccess">teacher/TeacherSingleView.jsp</result>
+		</action>
+		<action name="TeacherUse" class="model.teacher.TeacherListAction"
+			method="listUse">
+			<result name="UseSuccess" type="redirect">TeacherListRedirect</result>
+			<result name="UseFail" type="redirect">TeacherListRedirect</result>
+		</action>
+		<action name="TeacherNotUse" class="model.teacher.TeacherListAction"
+			method="listNotUse">
+			<result name="NotUseSuccess" type="redirect">TeacherListRedirect</result>
+			<result name="NotUseFail" type="redirect">TeacherListRedirect</result>
+		</action>
+
+		<action name="teacherregisterbtn">
+			<result name="success">teacher/TeacherRegister.jsp</result>
+		</action>
+		<action name="teacherregisterForm" class="controller.Teacher.TeacherRegisterAction"
+			method="teacherRegister">
+			<result name="input">teacher/TeacherRegister.jsp</result>
+			<result name="success" type="redirect">TeacherRegisterRedirect</result>
+			<result name="fail">teacher/TeacherRegister.jsp</result>
+		</action>
+		<action name="TeacherRegisterRedirect">
+			<result name="success" type="redirect">TeacherListRedirect</result>
+		</action>
+
+		<action name="Back1">
+			<result name="success" type="redirect">TeacherListRedirect</result>
+		</action>
+
+		<action name="teditForm" class="model.teacher.TeacherSingleView"
+			method="getUpdateData">
+			<result name="UpdateDataSuccess">teacher/TeacherEdit.jsp</result>
+			<result name="UpdateDataFail" type="redirect">TeacherListRedirect</result>
+		</action>
+		<action name="taeditForm" class="controller.Teacher.TeacherEdit"
+			method="Update">
+			<result name="input">teacher/TeacherEditCopy.jsp</result>
+			<result name="success" type="redirect">TeacherProfileRedirect</result>
+			<result name="fail">teacher/TeacherEditCopy.jsp</result>
+		</action>
+		<action name="TeacherProfileRedirect" class="model.teacher.TeacherSingleView"
+			method="ProfileView">
+			<result name="ProfileSuccess">teacher/TeacherSingleView.jsp</result>
+			<result name="ProfileFail" type="redirect">TeacherListRedirect</result>
+		</action>
+		<action name="Student">
+			<result name="success">student/StudentLogin.jsp</result>
+		</action>
+		<action name="StudentloginForm" class="controller.Student.StudentLogin"
+			method="Login">
+			<result name="input">student/StudentLogin.jsp</result>
+			<result name="success" type="redirect">StudentLoginRedirect</result>
+			<result name="error">student/StudentLogin.jsp</result>
+		</action>
+		<action name="StudentLoginRedirect">
+			<result name="success" type="redirect">StudentProfileRedirect</result>
+		</action>
+		<action name="StudentCancelForm" class="model.student.StudentSingleView"
+			method="ProfileView">
+			<result name="ProfileSuccess">student/StudentView.jsp</result>
+		</action>
+		<action name="StudentBtn">
+			<result name="success" type="redirect">StudentListRedirect</result>
+		</action>
+		<action name="StudentListRedirect" class="model.student.StudentListAction"
+			method="view">
+			<result name="loginRedirectSuccess">student/StudentList.jsp</result>
+		</action>
+		<action name="sviewform" class="model.student.StudentSingleView"
+			method="ProfileView">
+			<result name="ProfileSuccess">student/StudentView.jsp</result>
+		</action>
+		<action name="StudentUse" class="model.student.StudentListAction"
+			method="listUse">
+			<result name="UseSuccess" type="redirect">StudentListRedirect</result>
+			<result name="UseFail" type="redirect">StudentListRedirect</result>
+		</action>
+		<action name="StudentNotUse" class="model.student.StudentListAction"
+			method="listNotUse">
+			<result name="NotUseSuccess" type="redirect">StudentListRedirect</result>
+			<result name="NotUseFail" type="redirect">StudentListRedirect</result>
+		</action>
+		<action name="studentregisterbtn">
+			<result name="success">student/StudentRegister.jsp</result>
+		</action>
+		<action name="StudentregisterForm" class="controller.Student.StudentRegisterAction"
+			method="studentRegister">
+			<result name="input">student/StudentRegister.jsp</result>
+			<result name="success" type="redirect">StudentRegisterRedirect</result>
+			<result name="fail">student/StudentRegister.jsp</result>
+		</action>
+		<action name="StudentRegisterRedirect">
+			<result name="success" type="redirect">StudentListRedirect</result>
+		</action>
+		<action name="StudentCancel">
+			<result name="success" type="redirect">StudentListRedirect</result>
+		</action>
+		<action name="seditForm" class="model.student.StudentSingleView"
+			method="getUpdateData">
+			<result name="UpdateDataSuccess">student/StudentEdit.jsp</result>
+			<result name="UpdateDataFail">common/header.jsp</result>
+		</action>
+		<action name="studentEditForm" class="controller.Student.StudentEdit"
+			method="Update">
+			<result name="input">student/StudentEditCopy.jsp</result>
+			<result name="success" type="redirect">StudentProfileRedirect</result>
+			<result name="fail">student/StudentEditCopy.jsp</result>
+		</action>
+		<action name="StudentProfileRedirect">
+			<result name="ProfileFail">student/StudentView.jsp</result>
+		</action>
+		<action name="StudentProfileRedirect" class="model.student.StudentSingleView"
+			method="ProfileView">
+			<result name="ProfileSuccess">student/StudentView.jsp</result>
+			<result name="ProfileFail" type="redirect">StudentListRedirect</result>
+		</action>
+		<action name="Back2">
+			<result name="success" type="redirect">StudentListRedirect</result>
+		</action>
+		<action name="CancelForm">
+			<result name="success" type="redirect">StudentProfileRedirect</result>
+		</action>
+		<action name="StudentProfileRedirect" class="model.student.StudentSingleView"
+			method="ProfileView">
+			<result name="ProfileSuccess">student/StudentView.jsp</result>
+			<result name="ProfileFail" type="redirect">StudentListRedirect</result>
+		</action>
+		<action name="XLDownloadbtn" class="controller.Student.ExcelDownloadAction"
+			method="templateExcelDownload">
+			<result name="success" type="redirect">StudentListRedirect</result>
+		</action>
+		<action name="XLImport" class="controller.Student.ExcelDownloadAction"
+			method="Import">
+			<result name="success" type="redirect">StudentListRedirect</result>
+		</action>
+		<!-- BATCH -->
+		<action name="BatchBtn">
+			<result name="success" type="redirect">BatchListRedirect</result>
+		</action>
+		<action name="batchCancel">
+			<result name="success" type="redirect">BatchListRedirect</result>
+		</action>
+		<action name="batchregisterbtn">
+			<result name="success">batch/batchregister.jsp</result>
+		</action>
+		<action name="BatchRegisterRedirect">
+			<result name="success" type="redirect">BatchListRedirect</result>
+		</action>
+		<action name="batchregisterForm" class="controller.batch.BatchRegisterAction"
+			method="batchregister">
+			<result name="input">batch/batchregister.jsp</result>
+			<result name="success" type="redirect">BatchRegisterRedirect</result>
+			<result name="fail">batch/batchregister.jsp</result>
+		</action>
+		<action name="BatchListRedirect" class="controller.batch.BatchListAction"
+			method="batchview">
+			<result name="loginRedirectSuccess">batch/batchlist.jsp</result>
+			<result name="loginRedirectFail">success/fail.jsp</result>
+		</action>
+		<action name="BatchUse" class="controller.batch.BatchListAction"
+			method="batchlistUse">
+			<result name="UseSuccess" type="redirect">BatchListRedirect</result>
+			<result name="UseFail" type="redirect">BatchListRedirect</result>
+		</action>
+		<action name="BatchNotUse" class="controller.batch.BatchListAction"
+			method="batchlistNotUse">
+			<result name="NotUseSuccess" type="redirect">BatchListRedirect</result>
+			<result name="NotUseFail" type="redirect">BatchListRedirect</result>
+		</action>
+		<action name="bviewform" class="controller.batch.BatchSingleView"
+			method="BatchSingle1View">
+			<result name="ProfileSuccess">batch/batchview.jsp</result>
+			<result name="ProfileFail" type="redirect">BatchListRedirect</result>
+		</action>
+		<action name="batchSingleviewRedirect" class="controller.batch.BatchSingleView"
+			method="BatchSingle1View">
+			<result name="ProfileSuccess">batch/batchview.jsp</result>
+			<result name="ProfileFail">batch/batchview.jsp</result>
+		</action>
+		<action name="beditForm" class="controller.batch.BatchSingleView"
+			method="geteditUpdateData">
+			<result name="UpdateDataSuccess">batch/batchedit.jsp</result>
+			<result name="UpdateDataFail">success/fail.jsp</result>
+		</action>
+		<action name="Backbat">
+			<result name="success" type="redirect">BatchListRedirect</result>
+		</action>
+		<action name="batcheditForm" class="controller.batch.BatchEditAction"
+			method="batcheditUpdate">
+			<result name="input">batch/batcheditcopy.jsp</result>
+			<result name="success" type="redirect">batchSingleviewRedirect</result>
+			<result name="fail">batch/batcheditcopy.jsp</result>
+		</action>
+		<action name="batcheditCancel" class="controller.batch.BatchSingleView"
+			method="BatchSingle1View">
+			<result name="ProfileSuccess" type="redirect">batchSingleviewRedirect</result>
+			<result name="ProfileFail" type="redirect">batchSingleviewRedirect</result>
+		</action>
+		<action name="addstu" class="controller.batch.AddStudentAction"
+			method="getaddstu">
+			<result name="success" type="redirect">AddstudentRedirect</result>
+			<result name="fail">batch/batcheditcopy.jsp</result>
+		</action>
+		<action name="AddstudentRedirect" class="controller.batch.AddStudentAction"
+			method="getaddstu">
+			<result name="success">batch/Addstudent.jsp</result>
+			<result name="fail">batch/batcheditcopy.jsp</result>
+		</action>
+		<action name="markX" class="controller.batch.AddStudentAction"
+			method="getaddstu">
+			<result name="success" type="redirect">batchSingleviewRedirect</result>
+		</action>
+		<action name="addstudentForm" class="controller.batch.AddStudentAction"
+			method="insertaddstu">
+			<result name="success" type="redirect">batchSingleviewRedirect</result>
+			<result name="fail">success/fail.jsp</result>
+		</action>
+		<action name="addstucancel">
+			<result name="success" type="redirect">batchSingleviewRedirect</result>
+			<result name="fail">success/fail.jsp</result>
+		</action>
+
+		<action name="addtea" class="controller.batch.AddTeacherAction"
+			method="getaddtea">
+			<result name="success">batch/Addteacher.jsp</result>
+			<result name="fail">batch/batcheditcopy.jsp</result>
+		</action>
+		<action name="markX11" class="controller.batch.AddTeacherAction"
+			method="getaddtea">
+			<result name="success" type="redirect">batchSingleviewRedirect</result>
+		</action>
+		<action name="addteacherForm" class="controller.batch.AddTeacherAction"
+			method="insertaddtea">
+			<result name="success" type="redirect">batchSingleviewRedirect</result>
+			<result name="fail">success/fail.jsp</result>
+		</action>
+		<action name="addteacancel">
+			<result name="success" type="redirect">batchSingleviewRedirect</result>
+			<result name="fail">success/fail.jsp</result>
+		</action>
+		<!-- COURSE -->
+		<action name="CourseBtn">
+			<result name="success" type="redirect">courseListRedirect</result>
+		</action>
+		<action name="courseCancel">
+			<result name="success" type="redirect">courseListRedirect</result>
+		</action>
+		<action name="courseregisterbtn">
+			<result name="success">course/courseregister.jsp</result>
+		</action>
+		<action name="courseListRedirect" class="controller.course.CourseListAction"
+			method="courseview">
+			<result name="loginRedirectSuccess">course/courselist.jsp</result>
+			<result name="loginRedirectFail">success/fail.jsp</result>
+		</action>
+		<action name="courseregisterForm" class="controller.course.CourseRegisterAction"
+			method="courseregister">
+			<result name="input">course/courseregister.jsp</result>
+			<result name="success" type="redirect">courseListRedirect</result>
+			<result name="fail">course/courseregister.jsp</result>
+		</action>
+		<action name="CourseUse" class="controller.course.CourseListAction"
+			method="courselistUse">
+			<result name="UseSuccess" type="redirect">courseListRedirect</result>
+			<result name="UseFail" type="redirect">courseListRedirect</result>
+		</action>
+		<action name="CourseNotUse" class="controller.course.CourseListAction"
+			method="coursenotlistUse">
+			<result name="NotUseSuccess" type="redirect">courseListRedirect</result>
+			<result name="NotUseFail" type="redirect">courseListRedirect</result>
+		</action>
+
+		<action name="coviewform" class="controller.course.CourseSingleViewAction"
+			method="CourseSingle1View">
+			<result name="ProfileSuccess">course/coursesingleview.jsp</result>
+			<result name="ProfileFail" type="redirect">courseListRedirect</result>
+		</action>
+		<action name="courseSingleviewRedirect" class="controller.course.CourseSingleViewAction"
+			method="CourseSingle1View">
+			<result name="ProfileSuccess">course/coursesingleview.jsp</result>
+			<result name="ProfileFail">course/coursesingleview.jsp</result>
+		</action>
+		<action name="courseback">
+			<result name="success" type="redirect">courseListRedirect</result>
+		</action>
+		<action name="addbtc" class="controller.course.AddBatchAction"
+			method="getaddbatc">
+			<result name="success" type="redirect">AddbatchRedirect</result>
+			<result name="fail">batch/batcheditcopy.jsp</result>
+		</action>
+
+		<action name="AddbatchRedirect" class="controller.course.AddBatchAction"
+			method="getaddbatc">
+			<result name="success">course/addbatch.jsp</result>
+			<result name="fail">batch/batcheditcopy.jsp</result>
+		</action>
+		<action name="markcoX" class="controller.course.AddBatchAction"
+			method="getaddbatc">
+			<result name="success" type="redirect">courseSingleviewRedirect</result>
+		</action>
+		<action name="addbatchForm" class="controller.course.AddBatchAction"
+			method="insertaddcou">
+			<result name="success" type="redirect">courseSingleviewRedirect</result>
+			<result name="fail">success/fail.jsp</result>
+		</action>
+		<action name="addbatcancel">
+			<result name="success" type="redirect">courseSingleviewRedirect</result>
+			<result name="fail">success/fail.jsp</result>
+		</action>
+		<action name="ceditForm" class="controller.course.CourseSingleViewAction"
+			method="getcourseeditUpdateData">
+			<result name="UpdateDataSuccess">course/courseedit.jsp</result>
+			<result name="UpdateDataFail">success/fail.jsp</result>
+		</action>
+		<action name="courseeditForm" class="controller.course.CourseEditAction"
+			method="courseeditUpdate">
+			<result name="input">course/courseeditcopy.jsp</result>
+			<result name="success" type="redirect">courseSingleviewRedirect</result>
+			<result name="fail">course/courseeditcopy.jsp</result>
+		</action>
+		<action name="courseeditCancel" class="controller.course.CourseSingleViewAction"
+			method="CourseSingle1View">
+			<result name="ProfileSuccess" type="redirect">courseSingleviewRedirect</result>
+			<result name="ProfileFail" type="redirect">courseSingleviewRedirect</result>
+		</action>
+		<action name="studenthistory" class="controller.course.StudentHistoryAction"
+			method="Studenthistorylist">
+			<result name="success">course/studenthistory.jsp</result>
+			<result name="fail">success/fail.jsp</result>
+		</action>
+		<action name="stuhissiviewform">
+			<result name="success" type="redirect">coviewform</result>
+			<result name="fail">success/fail.jsp</result>
+		</action>
+		<!-- FEES -->
+		<!-- FEES REGISTER -->
+		<action name="FeesBtn">
+			<result name="success" type="redirect">feesListRedirect</result>
+		</action>
+		<action name="feesCancel">
+			<result name="success" type="redirect">feesListRedirect</result>
+		</action>
+		<action name="regfee" class="controller.Fees.PayFeesRegister"
+			method="batchs">
+			<result type="json">
+				<param name="root">json</param>
+			</result>
+		</action>
+		<action name="stufee" class="controller.Fees.PayFeesRegister"
+			method="students">
+			<result type="json">
+				<param name="root">json11</param>
+			</result>
+		</action>
+		<action name="feessss" class="controller.Fees.PayFeesRegister"
+			method="fees111">
+			<result type="json">
+				<param name="root">json1111</param>
+			</result>
+		</action>
+		<action name="payfeesregisterR" class="controller.Fees.FeesRegisterAction"
+			method="feesregister11">
+			<result name="input">payfees/payfeesregister.jsp</result>
+			<result name="success" type="redirect">feesListRedirect</result>
+			<result name="fail">payfees/payfeesregister.jsp</result>
+		</action>
+		<!-- FEES LIST -->
+		<action name="feesregisterbtn" class="controller.Fees.PayFeesRegister"
+			method="feesrgister">
+			<result name="success">payfees/payfeesregister.jsp</result>
+			<result name="fail">payfees/payfeesregister.jsp</result>
+		</action>
+		<action name="feesListRedirect" class="controller.Fees.FeesListAction"
+			method="Feesview">
+			<result name="loginRedirectSuccess">payfees/payfeeslist.jsp</result>
+			<result name="loginRedirectFail">payfees/payfeeslist.jsp</result>
+		</action>
+		<!-- FEES HISTORY -->
+		<action name="feviewform" class="controller.Fees.FeesHistoryAction"
+			method="Feeshistory">
+			<result name="loginRedirectSuccess">payfees/payfeeshistory.jsp</result>
+			<result name="loginRedirectFail">success/fail.jsp</result>
+		</action>
+		<action name="hisback">
+			<result name="success" type="redirect">feesListRedirect</result>
+			<result name="fail">success/fail.jsp</result>
+		</action>
+			<!-- FEES DETAIL -->
+		<action name="fDviewform" class="controller.Fees.FeesListAction"
+			method="FeesDetail">
+			<result name="loginRedirectSuccess">payfees/payfeesdetail.jsp</result>
+			<result name="loginRedirectFail">success/fail.jsp</result>
+		</action>
+		<action name="Backbathdetail" class="controller.Fees.FeesListAction"
+			method="FeesDetail">
+			<result name="loginRedirectSuccess">payfees/payfeesdetail.jsp</result>
+			<result name="loginRedirectFail">success/fail.jsp</result>
+		</action>
+		<!-- FEES DETAILREGISTER -->
+		<action name="detailregisterbtn" class="controller.Fees.FeesListAction"
+			method="FeesDetailregisterscreen">
+			<result name="success">payfees/payfeesdetailregister.jsp</result>
+			<result name="fail">payfees/payfeesdetailregister.jsp</result>
+		</action>
+		<action name="fdrform" class="controller.Fees.FeesDetailRegisterAction"
+			method="FeesDetailregisterscreeninsert">
+			<result name="input">payfees/payfeesdetailregistercopy.jsp</result>
+			<result name="success" type="redirect">fDviewform</result>
+			<result name="fail">payfees/payfeesdetailregistercopy.jsp</result>
+		</action>
+		<action name="batcbackfdr">
+			<result name="success">payfees/payfeesdetail.jsp</result>
+			<result name="fail">success/fail.jsp</result>
+		</action>
+	</package>
+</struts>

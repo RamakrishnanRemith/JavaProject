@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE validators PUBLIC "-//Apache Struts//XWork Validator 1.0.3//EN" "http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">
+<validators>
+	<field name="batchname">
+		<field-validator type="requiredstring">
+			<message>Please Enter BatchName</message>
+		</field-validator>
+		</field>
+		 <field name="startdate">
+		<field-validator type="requiredstring">
+			<message>Please Enter startdate</message>
+		</field-validator>
+		</field>
+		<field name="enddate">
+		<field-validator type="requiredstring">
+			<message>Please Enter enddate</message>
+		</field-validator> 
+		</field>
+		</validators>
+		

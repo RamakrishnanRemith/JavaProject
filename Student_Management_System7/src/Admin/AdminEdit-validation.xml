@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE validators PUBLIC "-//Apache Struts//XWork Validator 1.0.3//EN" "http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">
+<validators>
+	<field name="userName">
+		<field-validator type="requiredstring">
+			<message>Please Enter UserName</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="minLength">5</param>
+			<param name="maxLength">35</param>
+			<param name="trim">true</param>
+			<message>Admin Name must be between 5 to 35 characters</message>
+		</field-validator>
+	</field>
+	<field name="mailId">
+		<field-validator type="requiredstring">
+			<message>Please Enter The Mail</message>
+		</field-validator>
+	</field>
+	<field name="contactNo">
+		<field-validator type="requiredstring">
+			<message>contact cannot Empty.</message>
+		</field-validator>
+		<field-validator type="regex">
+			<param name="regex">^([0-9]{10}$)</param>
+			<message>Conatact must be 10 numbers</message>
+		</field-validator>
+	</field>
+	<field name="dob">
+		<field-validator type="requiredstring">
+			<message>Please Select DateOfBirth</message>
+		</field-validator>
+	</field>
+	<field name="gender">
+		<field-validator type="fieldexpression">
+			<param name="expression"><![CDATA[(gender>0)]]></param>
+			<message>Please Select Gender</message>
+		</field-validator>
+	</field>
+</validators>

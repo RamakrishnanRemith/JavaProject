@@ -1,0 +1,542 @@
+@CHARSET "ISO-8859-1";
+
+.btn {
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	display: inline-block;
+	font-size: 16px;
+	cursor: pointer;
+	border-radius: 6px;
+	text-decoration: none;
+}
+
+.btnblack {
+	border: none;
+	padding: 15px 32px;
+	text-align: center;
+	display: inline-block;
+	font-size: 16px;
+	cursor: pointer;
+	text-decoration: none;
+	border-radius: 6px;
+}
+
+.floatl {
+	float: left;
+}
+
+.loginbtn {
+	border: none;
+	color: white;
+	border-radius: 6px;
+	padding: 10px 50px;
+	text-align: center;
+	display: inline-block;
+	font-size: 14px;
+	align: center;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+.forgetpass {
+	font-size: 14px;
+	height: 30px;
+	width: 91%;
+	padding: 6px 12px;
+	border: 1px solid #ccc;
+	border-radius: 6px;
+	margin-left: 3%;
+}
+
+.textbox {
+	font-size: 14px;
+	height: 30px;
+	width: 50%;
+	padding: 6px 12px;
+	border: 1px solid #ccc;
+	border-radius: 6px;
+}
+
+.textbox1 {
+	font-size: 14px;
+	height: 20px;
+	width: 25%;
+	padding: 6px 12px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	margin-left: 3%;
+}
+
+.registertextbox {
+	font-size: 14px;
+	height: 15px;
+	width: 25%;
+	padding: 6px 12px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	margin-left: 2%;
+}
+
+.feesbox {
+	font-size: 14px;
+	height: 15px;
+	width: 10%;
+	padding: 6px 1px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	margin-left: 2%;
+}
+
+.registerdatebox {
+	font-size: 14px;
+	height: 15px;
+	width: 18%;
+	padding: 6px 12px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	margin-left: 2%;
+}
+
+.changepasswordlbl {
+	width: 100%;
+	display: block;
+	margin-top: 2%;
+}
+
+.clrredmandatory {
+	width: 3%;
+	display: inline-block;
+	text-align: center;
+	font-weight: bold;
+	color: red;
+}
+
+.clrredmandatory1 {
+	display: inline-block;
+	text-align: center;
+	font-weight: bold;
+	color: red;
+}
+
+.customErrorMessage {
+	padding: 10px;
+	background-color: #FFC1999;
+	border-left: 5 pxsolid #ffbb04;
+	Color: red;
+	Margin: 2px;
+	font-weight: bold;
+	padding: 2px 12px;
+	width: 40%;
+	text-align: center;
+}
+
+.customErrorMessagexml {
+	padding: 10px;
+	background-color: #FFC1999;
+	border-left: 5 pxsolid #ffbb04;
+	Color: red;
+	Margin: 2px;
+	font-weight: bold;
+	width: 100%;
+	text-align: center;
+	list-style: none;
+}
+
+.btn-green {
+	background-Color: #4CAF50;
+}
+
+.btn-brown {
+	background-Color: Brown;
+}
+
+.btn-orange {
+	background-Color: #ff8000;
+}
+
+.btn-red {
+	background-Color: #ff0000;
+}
+
+.btn-grey {
+	background-Color: #555555;
+}
+
+.btn-cyan {
+	background-Color: cyan;
+}
+
+.btn-paingreen {
+	background-Color: #136E83;
+}
+
+.btn-coral {
+	background-Color: coral;
+}
+
+.font {
+	font-size: 20px;
+}
+
+.center {
+	text-align: center;
+}
+
+.right {
+	text-align: right;
+}
+
+.bkcolor-lightblue {
+	background-Color: lightblue;
+}
+
+.bkcolor-red {
+	background-Color: red;
+}
+
+.mb6per {
+	margin-bottom: 6%;
+}
+
+.mt5per {
+	margin-top: 5%;
+}
+
+.mt1per {
+	margin-top: 1%;
+}
+
+.pt50 {
+	padding-top: 50px;
+}
+
+.pb10per {
+	padding-bottom: 10%;
+}
+
+.pl10 {
+	padding-left: 10px;
+}
+
+.pr10 {
+	padding-right: 10px;
+}
+
+.ml6per {
+	margin-left: 6%;
+}
+
+.ml2per {
+	margin-left: 2%;
+}
+
+.mr6per {
+	margin-right: 6%;
+}
+
+.field {
+	width: 50%;
+	margin-left: 25%;
+}
+
+.ml20per {
+	margin-left: 20%;
+}
+
+.ml4per {
+	margin-left: 4%;
+}
+
+.ml50per {
+	margin-left: 50%;
+}
+
+.mr20per {
+	margin-right: 20%;
+}
+
+.pl11per {
+	padding-left: 11%;
+}
+
+.mr76per {
+	margin-right: 76%;
+}
+
+.customErrorMessage li {
+	list-style: none;
+}
+
+.inb {
+	display: inline-block;
+}
+
+.fwb {
+	font-weight: bold;
+}
+
+.fwbt {
+	font-weight: bold;
+	margin-top: 20%;
+}
+
+.wid24per {
+	width: 24%;
+}
+
+.wid3per {
+	width: 3%;
+}
+
+.mt2per {
+	margin-top: 2%;
+}
+
+.mb3per {
+	margin-bottom: 3%;
+}
+
+.mb30per {
+	margin-bottom: 30%;
+}
+
+.mt25per {
+	margin-top: 25%;
+}
+
+.pad {
+	padding-left: 10%;
+}
+
+.pad1 {
+	padding-left: 2%;
+}
+
+.padr {
+	padding-right: 10%;
+	text-align: right;
+}
+
+.img {
+	width: 3px;
+	height: 3px;
+	align: right;
+}
+
+.dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	padding: 12px 16px;
+	z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+
+.edit {
+	align: right;
+	text-decoration: none;
+}
+
+.label {
+	text-align: right;
+	color: #136E83;
+	font: BOLD;
+}
+
+.brown {
+	color: Brown;
+}
+
+.right {
+	text-align: right;
+}
+
+.passlbl {
+	width: 35%;
+	display: inline-block;
+	text-align: right;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+.registerlbl {
+	width: 35%;
+	display: inline-block;
+	text-align: right;
+	font-weight: bold;
+	font-size: 16px;
+}
+
+.registerlbl2 {
+	width: 10%;
+	display: inline-block;
+	text-align: right;
+	font-weight: bold;
+	font-size: 16px;
+}
+
+.forgetpasswordmaindiv {
+	width: 100%;
+	display: block;
+	margin-top: 2%;
+	margin-bottom: 3%;
+}
+
+.forgetpasswordindiv1 {
+	width: 48%;
+	display: inline-block;
+}
+
+.forgetpasswordindiv2 {
+	width: 50%;
+	display: inline-block;
+}
+
+.selecttext {
+	font-size: 14px;
+	height: 30px;
+	width: 28%;
+	padding: 6px 12px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	margin-left: 2%;
+}
+
+.maindiv1 {
+	width: 100%;
+	display: block;
+	margin-top: 1%;
+}
+
+.sdiv1 {
+	text-align: right;
+	width: 20%;
+	display: inline-block;
+}
+
+.sdiv2 {
+	text-align: left;
+	width: 30%;
+	display: inline-block;
+}
+
+.sdiv3 {
+	width: 40%;
+	display: inline-block;
+}
+
+.sdiv4 {
+	width: 58%;
+	display: inline-block;
+}
+
+.sdiv5 {
+	width: 40%;
+	display: inline-block;
+}
+
+.sdiv7 {
+	width: 77%;
+	display: inline-block;
+}
+
+.sdiv6 {
+	width: 22%;
+	display: inline-block;
+	float;
+	right;
+}
+
+.mt {
+	margin-top: 1%;
+}
+
+.modal {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	padding-top: 100px;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgb(0, 0, 0);
+	background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+	background-color: #fefefe;
+	margin: auto;
+	padding: 20px;
+	border: 1px solid #888;
+	width: 60%;
+}
+
+.close {
+	color: #aaaaaa;
+	font-size: 28px;
+	font-weight: bold;
+}
+
+.close:hover, .close:focus {
+	color: #000;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.h1header {
+	float: left;
+	margin-left: 5px;
+	margin-top: 9px;
+	padding: 0px;
+	margin: 0px;
+	padding-left: 10px;
+	padding-top: 5px;
+}
+
+.imgheader {
+	float: left;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	padding: 0px;
+	margin: 0px;
+	padding-left: 0px;
+}
+.selectBox{
+	font-size: 14px;
+	height: 15px;
+	width: 25%;
+	padding: 6px 12px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	margin-left: 5%;
+}
+
+
+.search{
+	width: 17%;
+	display:inline-block;
+	padding-right:10px;
+}
+.selbox {
+	width: 10%;
+	display: inline-block;
+	margin-top: 2px;
+	padding-right:10px;
+	margin-left:40%;
+	font-size: 20px;
+	border-radius: 6px;
+}
